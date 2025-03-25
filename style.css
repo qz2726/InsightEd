@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+  font-family: system-ui !important;
+}
+
+header {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-link {
+  color: #333;
+  padding: 10px 15px;
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+}
+
+/* Animations */
+.animated-title {
+  animation: fadeIn 2s ease-in-out;
+
+}
+.bg-primary {
+  background: linear-gradient(90deg, #EEF5FF, #CDE1FF);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Labels Section */
+.label-card {
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: center!important;
+  align-items: center!important;
+  text-align: center!important;
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(90deg, #EEF5FF, #CDE1FF);
+  transition: transform 0.3s;
+  padding: 0px;
+  height: 100%; /* Ensure the card height is fully used */
+
+}
+
+.label-card:hover {
+  transform: scale(1.1); /* Makes the element 10% bigger */
+}
+
+
+/* Filters Section */
+.filter-card {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.chart-container {
+  padding: 10px;
+  position: relative;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Info Section */
+.info-section {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* .tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0; /* Hide when not active */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align all charts to the left */
+  align-items: flex-start; /* Align charts at the top */
+}
+
+.performance {
+
+  width: 49%; /* Consistent spacing */
+
+}
+
+.chart-container.visible {
+  display: block; /* Only show visible charts */
+}
+
+.info-section {
+    overflow: auto; /* Allows the section to expand with content */
+    transition: all 0.3s ease-in-out; /* Smooth expansion animation */
+    height:105%;
+  }
+  
+  .collapse {
+    transition: height 0.3s ease; /* Smooth expansion for the collapsible content */
+  }
+  
