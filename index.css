@@ -1,0 +1,212 @@
+:root {
+    --base-font-size: 14px;
+    --gap-between-sections: 10px;
+    --section-count: 4;
+    --section-height: 100px;
+    cursor: default !important;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-size: var(--base-font-size) !important;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+.top {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    height: var(--section-height);
+
+    position: relative;
+}
+
+.section:hover {
+    background-color: #eaeaea;
+}
+
+.section.active {
+    background-color: #d0ebff;
+    border-color: #a4d8ff;
+}
+
+.section.active .section-image {
+    color: #55cd0e;
+    background: linear-gradient(135deg, #e0e0e0, #cccccc);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-image {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f6f6f6, #e0e0e0);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+    color: #666;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.section-image:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section:hover .section-image {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e0e0e0, #cccccc);
+    color: #333;
+}
+
+.section-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.section-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 1;
+
+}
+.info-section {
+    overflow: visible; /* Allows the section to expand dynamically with content */
+    transition: max-height 0.3s ease-in-out; /* Smooth expansion animation */
+    height: 105%; /* Ensure no height limit */
+}
+
+
+.collapse {
+    transition: height 0.3s ease; /* Smooth expansion for the collapsible content */
+}
+
+
+.section-title {
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.section-description {
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+}
+
+body {
+    font-size: var(--base-font-size) !important;
+    cursor: default !important;
+    font-family: system-ui!important;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    height: auto; /* Adjusts height dynamically based on content */
+    overflow: visible; /* Ensures content expansion adjusts the container */
+    transition: height 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Smooth animation for height changes */
+
+}
+
+.left {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-between-sections);
+    height: auto; /* Adjusts height dynamically based on content */
+    overflow: visible; /* Ensures content expansion adjusts the container */
+    transition: height 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Smooth animation for height changes */
+}
+
+/* .right {*/
+/*   grid-row: 2;*/
+/*   grid-column: 2;*/
+/*   background-color: #fff;*/
+/*   border-radius: 8px;*/
+/*   border: 1px solid #ccc;*/
+/*   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+/*   padding: 20px;*/
+/*   height: auto; !* Adjusts height dynamically based on content *!*/
+/*   overflow: visible; !* Ensures content expansion adjusts the container *!*/
+/*   transition: height 0.3s ease-in-out, max-height 0.3s ease-in-out; !* Smooth animation for height changes *!*/
+/*}*/
+
+.right {
+    grid-row: 2;
+    grid-column: 2;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: auto;
+    overflow: hidden; /* Ensures the content stays inside the panel */
+    display: flex; /* Ensures proper layout */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: start;
+    align-items: stretch;
+    position: relative; /* To ensure content positioning is within the box */
+}
+
+
+.dummy-text {
+    margin: 20px 0;
+}
